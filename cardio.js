@@ -28,6 +28,9 @@ function filterByLength(people, length) {
  */
 function everyNPerson(people, n) {
   const newArray = [];
+  if (n == 0) {
+    return people;
+  }
   people.map((peeps, i) => {
     if (i == 0 || i % n == 0) {
       newArray.push(peeps);
@@ -45,7 +48,18 @@ function everyNPerson(people, n) {
  *    initials(['Kanye West', 'Barack Obama'])
  *    // → ['KW', 'BO']
  */
-function initials(people) {}
+function initials(people) {
+  const initialsArray = [];
+  people.map(peeps => {
+    let init = '';
+    let names = peeps.split(' ');
+    names.forEach(name => {
+      init += name[0];
+    });
+    initialsArray.push(init);
+  });
+  return initialsArray;
+}
 
 /**
  * Returns an array where every person is prepended with their position in the array
@@ -56,28 +70,50 @@ function initials(people) {}
  *    peopleWithPosition(['Kanye', 'Barack'])
  *    // → ['1. Kanye', '2. Barack']
  */
-function peopleWithPosition(people) {}
+function peopleWithPosition(people) {
+  const positionArray = [];
+  people.map((peeps, i) => positionArray.push(`${i}: ${peeps}`));
+  return positionArray;
+}
 
 /**
  * Sorts `people` by first name
  * @param {string[]} people
  * @returns {string[]} sorted array
  */
-function sortByFirstName(people) {}
+function sortByFirstName(people) {
+  const firstName = people.sort();
+  return firstName;
+}
 
 /**
  * Sorts `people` by last name
  * @param {string[]} people
  * @returns {string[]} sorted array
  */
-function sortByLastName(people) {}
+function sortByLastName(people) {
+  const lastName = [];
+  people.map(peeps => {
+    let names = peeps.split(' ');
+    lastName.push(names[1]);
+  });
+  return lastName.sort();
+}
 
 /**
  * Counts all the characters in the people array (including spaces)
  * @param {Array} people Array of names
  * @return Number of characters
  */
-function countTotalCharacters(people) {}
+function countTotalCharacters(people) {
+  let count = 0;
+  people.map(peeps => {
+    peeps.forEach(letters => {
+      count++;
+    });
+  });
+  return count;
+}
 
 /**
  * Returns `true` if everyone in `people` has `letter` in their name.
