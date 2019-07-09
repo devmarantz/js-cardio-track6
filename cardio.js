@@ -26,7 +26,15 @@ function filterByLength(people, length) {
  *    everyNPerson(['Matt', 'Kim', 'Kanye', 'Obama', 'Hans'], 2)
  *    // → ['Matt', 'Kanye', 'Hans']
  */
-function everyNPerson(people, n) {}
+function everyNPerson(people, n) {
+  const newArray = [];
+  people.map((peeps, i) => {
+    if (i == 0 || i % n == 0) {
+      newArray.push(peeps);
+    }
+  });
+  return newArray;
+}
 
 /**
  * Returns an array where each entry is the person's intials
