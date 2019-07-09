@@ -105,7 +105,15 @@ function sortByLastName(people) {
  * @param {Array} people Array of names
  * @return Number of characters
  */
-function countTotalCharacters(people) {}
+function countTotalCharacters(people) {
+  let count = 0;
+  people.map(peeps => {
+    peeps.forEach(letters => {
+      count++;
+    });
+  });
+  return count;
+}
 
 /**
  * Returns `true` if everyone in `people` has `letter` in their name.
