@@ -81,10 +81,7 @@ function peopleWithPosition(people) {
  * @param {string[]} people
  * @returns {string[]} sorted array
  */
-function sortByFirstName(people) {
-  const firstName = people.sort();
-  return firstName;
-}
+function sortByFirstName(people) {}
 
 /**
  * Sorts `people` by last name
@@ -105,15 +102,7 @@ function sortByLastName(people) {
  * @param {Array} people Array of names
  * @return Number of characters
  */
-function countTotalCharacters(people) {
-  let count = 0;
-  people.map(peeps => {
-    peeps.forEach(letters => {
-      count++;
-    });
-  });
-  return count;
-}
+function countTotalCharacters(people) {}
 
 /**
  * Returns `true` if everyone in `people` has `letter` in their name.
