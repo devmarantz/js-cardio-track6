@@ -8,7 +8,10 @@
  * @param {number} length
  * @returns {string[]} filtered array
  */
-function filterByLength(people, length) {}
+function filterByLength(people, length) {
+  const filteredArray = people.filter(peeps => peeps.length > length);
+  return filteredArray;
+}
 
 /**
  * Returns an array of every nth person.
