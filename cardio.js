@@ -109,11 +109,7 @@ function everyoneHasLetter(people, letter) {
  * @returns {boolean}
  */
 function someoneHasLetter(people, letter) {
-  let answer = false;
-  people.map(peeps => {
-    if (peeps.includes(letter)) answer = true;
-  });
-  return answer;
+  return people.some(person => person.includes(letter));
 }
 
 module.exports = {
