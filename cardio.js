@@ -61,8 +61,7 @@ function peopleWithPosition(people) {
  * @returns {string[]} sorted array
  */
 function sortByFirstName(people) {
-  const firstName = people.sort();
-  return firstName;
+  return [...people].sort();
 }
 
 /**
