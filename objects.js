@@ -34,4 +34,7 @@ newDeck.dealCard = function() {
 
 const newerDeck = JSON.parse(JSON.stringify(newDeck));
 
-console.log(newerDeck);
+// console.log(newerDeck);
+
+const { suit, weight, dealCard } = newDeck;
+console.log(dealCard());
