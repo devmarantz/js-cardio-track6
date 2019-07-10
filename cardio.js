@@ -52,9 +52,7 @@ function initials(people) {
  *    // → ['1. Kanye', '2. Barack']
  */
 function peopleWithPosition(people) {
-  const positionArray = [];
-  people.map((peeps, i) => positionArray.push(`${i}: ${peeps}`));
-  return positionArray;
+  return people.map((name, index) => `${index}: ${name}`);
 }
 
 /**
