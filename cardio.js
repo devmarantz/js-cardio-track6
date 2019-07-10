@@ -72,9 +72,9 @@ function sortByFirstName(people) {
 function sortByLastName(people) {
   const sortedArray = [...people];
   return sortedArray.sort((a, b) => {
-    const alastName = a.split(' ')[1];
-    const blastName = b.split(' ')[1];
-    if (alastName > blastName) {
+    const aLastName = a.split(' ')[1];
+    const bLastName = b.split(' ')[1];
+    if (aLastName > bLastName) {
       return 1;
     }
     return -1;
@@ -87,11 +87,7 @@ function sortByLastName(people) {
  * @return Number of characters
  */
 function countTotalCharacters(people) {
-  let count = 0;
-  people.map(peeps => {
-    count += peeps.length;
-  });
-  return count;
+  return people.reduce((total, current) => total + current.length, 0);
 }
 
 /**
