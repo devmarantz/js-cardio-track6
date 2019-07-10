@@ -93,11 +93,17 @@ function sortByFirstName(people) {
  */
 function sortByLastName(people) {
   const lastName = [];
-  people.map(peeps => {
+  people.map((peeps, i) => {
     let names = peeps.split(' ');
     lastName.push(names[1]);
   });
-  return lastName.sort();
+  lastName.sort();
+  lastName.filter((peeps, i) => {
+    people.map(fullName => {
+      if (fullName.includes(peeps)) lastName[i] = fullName;
+    });
+  });
+  return lastName;
 }
 
 /**

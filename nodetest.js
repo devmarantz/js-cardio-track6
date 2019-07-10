@@ -21,38 +21,21 @@ const peoples = [
   'Basile Phonix',
 ];
 
-// function sortByLastName(people) {
-//   const lastName = [];
-//   people.map((peeps, i) => {
-//     let names = peeps.split(' ');
-//     lastName.push(names[1]);
-//   });
-//   console.log(lastName);
-//   return lastName.sort();
-// }
-
-// sortByLastName(peoples);
-
-// function countTotalCharacters(people) {
-//   let count = 0;
-//   people.map(peeps => {
-//     count += peeps.length;
-//   });
-//   return count;
-// }
-
-// console.log(countTotalCharacters(peoples));
-
-function everyoneHasLetter(people, letter) {
-  let answer = true;
-  people.map(peeps => {
-    if (!peeps.includes(letter)) answer = false;
+function sortByLastName(people) {
+  const lastName = [];
+  people.map((peeps, i) => {
+    let names = peeps.split(' ');
+    lastName.push(names[1]);
   });
-  return answer;
+  lastName.sort();
+  console.log(lastName);
+  lastName.filter((peeps, i) => {
+    people.map(fullName => {
+      if (fullName.includes(peeps)) lastName[i] = fullName;
+    });
+  });
+  console.log(lastName);
+  return lastName;
 }
 
-console.log(everyoneHasLetter(peoples, 'z'));
-
-const name = 'Tony Danza';
-
-// console.log(name.includes('p'));
+sortByLastName(peoples);
