@@ -23,5 +23,15 @@ newDeck.dealCard = function() {
 // console.log(`I am the values`);
 // console.log(values);
 
-const entries = Object.entries(newDeck);
-console.log(entries);
+// const entries = Object.entries(newDeck);
+// console.log(entries);
+
+newDeck.dealCard = function() {
+  return `I don't feel lke dealing now`;
+};
+
+console.log(newDeck.dealCard());
+
+const newerDeck = JSON.parse(JSON.stringify(newDeck));
+
+console.log(newerDeck);
