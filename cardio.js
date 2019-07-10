@@ -9,8 +9,7 @@
  * @returns {string[]} filtered array
  */
 function filterByLength(people, length) {
-  const filteredArray = people.filter(peeps => peeps.length > length);
-  return filteredArray;
+  return people.filter(peeps => peeps.length > length);
 }
 
 /**
@@ -40,16 +39,7 @@ function everyNPerson(people, n) {
  *    // → ['KW', 'BO']
  */
 function initials(people) {
-  const initialsArray = [];
-  people.map(peeps => {
-    let init = '';
-    let names = peeps.split(' ');
-    names.forEach(name => {
-      init += name[0];
-    });
-    initialsArray.push(init);
-  });
-  return initialsArray;
+  return people.map(person => person.split(' ').reduce((accum, curr) => `${accum}${curr[0]}`, ''));
 }
 
 /**
