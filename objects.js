@@ -2,23 +2,26 @@
 const deck = {};
 
 function Deck(suit, weight) {
-  this.suit = suit  '';
-  this.weight = weight  0;
+  this.suit = suit || '';
+  this.weight = weight || 0;
   this.shuffle = function() {
     return "I'm Shuffling";
   };
 }
 
-const newDeck = new Deck('spade', 2);
-console.log(newDeck.shuffle());
+const newDeck = new Deck('♠', 2);
+
 newDeck.dealCard = function() {
   return "I'm Dealing";
 };
 
-console.log(newDeck.dealCard());
+// const keys = Object.keys(newDeck);
+// console.log(`I am the keys`);
+// console.log(keys);
 
-const newerDeck = new Deck();
+// const values = Object.values(newDeck);
+// console.log(`I am the values`);
+// console.log(values);
 
-delete newerDeck.weight;
-
-console.log(newerDeck);
+const entries = Object.entries(newDeck);
+console.log(entries);
