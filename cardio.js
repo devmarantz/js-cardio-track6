@@ -98,11 +98,7 @@ function countTotalCharacters(people) {
  * @returns {boolean}
  */
 function everyoneHasLetter(people, letter) {
-  let answer = true;
-  people.map(peeps => {
-    if (!peeps.includes(letter)) answer = false;
-  });
-  return answer;
+  return people.every(person => person.includes(letter));
 }
 
 /**
