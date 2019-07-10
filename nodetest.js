@@ -28,13 +28,11 @@ function sortByLastName(people) {
     lastName.push(names[1]);
   });
   lastName.sort();
-  console.log(lastName);
   lastName.filter((peeps, i) => {
     people.map(fullName => {
       if (fullName.includes(peeps)) lastName[i] = fullName;
     });
   });
-  console.log(lastName);
   return lastName;
 }
 
