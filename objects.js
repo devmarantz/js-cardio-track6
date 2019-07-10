@@ -26,11 +26,11 @@ newDeck.dealCard = function() {
 // const entries = Object.entries(newDeck);
 // console.log(entries);
 
-newDeck.dealCard = function() {
-  return `I don't feel lke dealing now`;
-};
+// newDeck.dealCard = function() {
+//   return `I don't feel lke dealing now`;
+// };
 
-console.log(newDeck.dealCard());
+// console.log(newDeck.dealCard());
 
 const newerDeck = JSON.parse(JSON.stringify(newDeck));
 
