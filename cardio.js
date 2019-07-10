@@ -108,9 +108,7 @@ function sortByLastName(people) {
 function countTotalCharacters(people) {
   let count = 0;
   people.map(peeps => {
-    peeps.forEach(letters => {
-      count++;
-    });
+    count += peeps.length;
   });
   return count;
 }
@@ -122,7 +120,13 @@ function countTotalCharacters(people) {
  * @param {string} letter
  * @returns {boolean}
  */
-function everyoneHasLetter(people, letter) {}
+function everyoneHasLetter(people, letter) {
+  let answer = true;
+  people.map(peeps => {
+    if (!peeps.includes(letter)) answer = false;
+  });
+  return answer;
+}
 
 /**
  * Returns `true` if at least one person has `letter` in their name.
