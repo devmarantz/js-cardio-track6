@@ -135,7 +135,13 @@ function everyoneHasLetter(people, letter) {
  * @param {string} letter
  * @returns {boolean}
  */
-function someoneHasLetter(people, letter) {}
+function someoneHasLetter(people, letter) {
+  let answer = false;
+  people.map(peeps => {
+    if (peeps.includes(letter)) answer = true;
+  });
+  return answer;
+}
 
 module.exports = {
   filterByLength,
