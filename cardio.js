@@ -70,18 +70,15 @@ function sortByFirstName(people) {
  * @returns {string[]} sorted array
  */
 function sortByLastName(people) {
-  const lastName = [];
-  people.map((peeps, i) => {
-    let names = peeps.split(' ');
-    lastName.push(names[1]);
+  const sortedArray = [...people];
+  return sortedArray.sort((a, b) => {
+    const alastName = a.split(' ')[1];
+    const blastName = b.split(' ')[1];
+    if (alastName > blastName) {
+      return 1;
+    }
+    return -1;
   });
-  lastName.sort();
-  lastName.filter((peeps, i) => {
-    people.map(fullName => {
-      if (fullName.includes(peeps)) lastName[i] = fullName;
-    });
-  });
-  return lastName;
 }
 
 /**
